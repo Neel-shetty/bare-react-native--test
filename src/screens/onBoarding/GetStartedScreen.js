@@ -5,23 +5,24 @@ import {
   View,
   Dimensions,
   ImageBackground,
+  StatusBar
 } from 'react-native';
 import React from 'react';
 import Logo from '../../components/ui/Logo';
-import Logos from '../../../assets/svg/Logo.svg';
+// import Logos from '../../../assets/svg/Logo.svg';
 import {useFonts} from 'expo-font';
-import AppLoading from 'expo-app-loading';
+// import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect} from 'react';
 import Button from '../../components/ui/Button';
 import {useNavigation} from '@react-navigation/native';
-import {StatusBar} from 'expo-status-bar';
-import {Storage} from '@aws-amplify/storage';
+// import {StatusBar} from 'expo-status-bar';
+// import {Storage} from '@aws-amplify/storage';
 
 const GetStartedScreen = () => {
-  async function awsstore() {
-    const store = await Storage.put('test.txt', 'Hello');
-  }
+  // async function awsstore() {
+  //   const store = await Storage.put('test.txt', 'Hello');
+  // }
 
   const [fontsLoaded] = useFonts({
     'satoshi-bold': require('../../../assets/fonts/satoshi/Satoshi-Bold.otf'),
@@ -32,7 +33,7 @@ const GetStartedScreen = () => {
   const navigation = useNavigation();
 
   function NextScreen() {
-    navigation.navigate('ChooseMode');
+    // navigation.navigate('ChooseMode');
   }
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const GetStartedScreen = () => {
 
   return (
     <>
-      <StatusBar style="light" />
+      {/* <StatusBar style="light" /> */}
       <View onLayout={onLayoutRootView} style={styles.rootContainer}>
         <ImageBackground
           source={require('../../../assets/images/getStartedBG.png')}
