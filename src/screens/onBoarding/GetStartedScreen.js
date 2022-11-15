@@ -5,34 +5,34 @@ import {
   View,
   Dimensions,
   ImageBackground,
-} from "react-native";
-import React from "react";
-import Logo from "../../components/ui/Logo";
-import Logos from "../../../assets/svg/Logo.svg";
-import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback, useEffect, useState } from "react";
-import Button from "../../components/ui/Button";
-import { useNavigation } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import { Storage } from "@aws-amplify/storage";
+} from 'react-native';
+import React from 'react';
+import Logo from '../../components/ui/Logo';
+import Logos from '../../../assets/svg/Logo.svg';
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
+import {useCallback, useEffect, useState} from 'react';
+import Button from '../../components/ui/Button';
+import {useNavigation} from '@react-navigation/native';
+import {StatusBar} from 'expo-status-bar';
+import {Storage} from '@aws-amplify/storage';
 
 const GetStartedScreen = () => {
   async function awsstore() {
-    const store = await Storage.put("test.txt", "Hello");
+    const store = await Storage.put('test.txt', 'Hello');
   }
 
   const [fontsLoaded] = useFonts({
-    "satoshi-bold": require("../../../assets/fonts/satoshi/Satoshi-Bold.otf"),
-    "satoshi-regular": require("../../../assets/fonts/satoshi/Satoshi-Regular.otf"),
-    "satoshi-medium": require("../../../assets/fonts/satoshi/Satoshi-Medium.otf"),
+    'satoshi-bold': require('../../../assets/fonts/satoshi/Satoshi-Bold.otf'),
+    'satoshi-regular': require('../../../assets/fonts/satoshi/Satoshi-Regular.otf'),
+    'satoshi-medium': require('../../../assets/fonts/satoshi/Satoshi-Medium.otf'),
   });
 
   const navigation = useNavigation();
 
   function NextScreen() {
-    navigation.navigate("ChooseMode");
+    navigation.navigate('ChooseMode');
   }
 
   useEffect(() => {
@@ -57,10 +57,9 @@ const GetStartedScreen = () => {
       <StatusBar style="light" />
       <View onLayout={onLayoutRootView} style={styles.rootContainer}>
         <ImageBackground
-          source={require("../../../assets/images/getStartedBG.png")}
+          source={require('../../../assets/images/getStartedBG.png')}
           resizeMode="cover"
-          style={styles.image}
-        >
+          style={styles.image}>
           <View style={styles.logoContainer}>
             <Logo width="196" height="59" scale="1" />
           </View>
@@ -89,8 +88,8 @@ const GetStartedScreen = () => {
 
 export default GetStartedScreen;
 
-const height = Dimensions.get("window").height;
-const width = Dimensions.get("window").width;
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 //console.log(height,width)
 
 const styles = StyleSheet.create({
@@ -108,8 +107,8 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     flex: 1,
-    alignSelf: "center",
-    justifyContent: "center",
+    alignSelf: 'center',
+    justifyContent: 'center',
     //backgroundColor: 'red',
     //paddingHorizontal: width / 3.5,
     //position: "absolute",
@@ -122,8 +121,8 @@ const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
     //backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "flex-end",
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     paddingBottom: 5,
 
     //paddingHorizontal: 30,
@@ -133,8 +132,8 @@ const styles = StyleSheet.create({
     //alignSelf: "center",
   },
   title: {
-    color: "white",
-    fontFamily: "satoshi-bold",
+    color: 'white',
+    fontFamily: 'satoshi-bold',
     fontSize: 35,
     //position: "absolute",
     //bottom: height / 20,
@@ -152,32 +151,32 @@ const styles = StyleSheet.create({
     //bottom: 260,
     //bottom: height / 5,
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 60,
     paddingVertical: 15,
   },
   subtitle: {
-    color: "#797979",
-    fontFamily: "satoshi-regular",
+    color: '#797979',
+    fontFamily: 'satoshi-regular',
     fontSize: 25,
-    textAlign: "center",
+    textAlign: 'center',
   },
   view: {
     //backgroundColor: "blue",
     flex: 1,
     //position: "absolute",
     //top: 170,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingBottom: 50,
     paddingTop: 10,
   },
   button: {
     width: 329,
     height: 92,
-    alignSelf: "center",
-    justifyContent: "center",
+    alignSelf: 'center',
+    justifyContent: 'center',
     //marginBottom: 5
   },
   dummy: {
