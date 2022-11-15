@@ -25,8 +25,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="GetStarted"
+          component={GetStartedScreen}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="Demo" component={Demo} />
-        {/* <Stack.Screen name="GetStarted" component={GetStartedScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
